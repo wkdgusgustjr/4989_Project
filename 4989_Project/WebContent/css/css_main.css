@@ -1,0 +1,83 @@
+@charset "UTF-8";
+
+body {
+    margin: 0 auto;
+    font-family: Noto Sans KR;
+    color : dimgrey;
+}
+
+.bar {
+	text-align: right;
+	margin: 10px 30px 0px 0px;
+	font-size: 13px;"
+}
+
+a {
+    color : dimgrey;
+    text-decoration : none;
+    cursor : pointer;
+}
+   
+.main {
+	float : left;
+	border-bottom : 1px solid darkgray;
+	margin-bottom : 30px;
+	width : 100%;
+}
+
+.menu {
+	color : black;
+	margin-top: 45px;
+	float : left;
+	width : 1000px;
+}
+
+.menu ul li {
+	 cursor : pointer;
+	 float : left;
+	 list-style-type : none;
+	 font-size : 20px;
+	 padding : 10px 20px 10px;
+	 color : black;
+}
+
+.advertising table {
+	border: 2px solid darkgray;
+    width: 1200px;
+    height: 100px;
+    margin: 0 auto;
+}
+
+   
+.btn {
+	outlin: none;
+	border: 2px groove darkgray;
+	font-family: Noto Sans KR;
+	background : none;
+	font-size : 12px;
+	width : 120px;
+   	height : 30px;
+}	
+
+.pbtn {
+	outlin: none;
+    border: 2px groove darkgray;
+    font-family: Noto Sans KR;
+    background: none;
+    font-size: 14px;
+    width: auto;
+    height: auto;
+}
+
+.main .title {
+	margin: 0px 0px 10px 30px;
+	font-size: 80px;
+	color: orange;
+	float: left;
+	width: 400px;
+}
+
+a:hover { color : orange; }
+
+.btn:hover { color : orange; }
+			

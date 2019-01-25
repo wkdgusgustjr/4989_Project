@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="comment">
+	
+	<!-- 댓글 불러오기 -->
+	<select id="comment_commentAll" resultType="comment" parameterType="int">
+	 	SELECT * FROM BOARD_COMMENT WHERE QNA_IDX = #{qna_idx} ORDER BY COM_IDX DESC 
+	</select>
+	
+	
+	<!-- 댓글 추가 -->
+	<insert id="comment_insert" parameterType="comment">
+		INSERT INTO BOARD_COMMENT VALUES ( seq_com_idx.nextVal, #{qna_idx}, #{com_text}, #{com_register}, TO_CHAR(sysdate, 'yyyy-mm-dd am hh24:mi') )
+	</insert>
+	
+	
+	<!-- 댓글 삭제 -->
+	<delete id="comment_delete" parameterType="int">
+		DELETE FROM	BOARD_COMMENT WHERE com_idx = #{com_idx}
+	</delete>
+	
+	<!-- 게시글 삭제하면 해당 게시글에 달린 댓글도 전부 삭제 -->
+	<delete id="comment_delete_in_qnaBoard" parameterType="int">
+		DELETE FROM	BOARD_COMMENT WHERE qna_idx = #{qna_idx}
+	</delete>
+	
+
+
+	<!-- 댓글 수정 -->
+	<update id="comment_update" parameterType="comment">
+		UPDATE BOARD_COMMENT SET com_comment = #{com_comment}, com_uploadDate=sysdate
+		WHERE com_idx = #{com_idx}
+	</update>
+	
+
+</mapper>
